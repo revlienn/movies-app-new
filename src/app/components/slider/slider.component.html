@@ -1,0 +1,43 @@
+<pre>{{ items | json }}</pre>
+<!-- container for each slide -->
+<div class="slider">
+    <!-- the slide itself, can be multiple -->
+    <div class="slide" *ngFor="let item of items">
+        <!-- right side: image -->
+        <div class="slide-bg">
+            <img
+                class="slide-bg-image"
+                src="https://image.tmdb.org/t/p/original/iQJ1gC2p6yn5wnBEklhPaEFJ3n1.jpg"
+                alt=""
+            />
+        </div>
+        <!-- left side: movie info -->
+        <div class="slide-pane">
+            <!-- title -->
+            <h2 class="title">{{ item.title }}</h2>
+            <!-- rating, review count, year -->
+            <div class="meta">
+                <div class="info">
+                    <span class="rating">
+                        <span class="material-symbols-outlined icon">
+                            star
+                        </span>
+                        <span class="rating-value">7.5</span>
+                        <span>/10</span>
+                    </span>
+                    <span>463 reviews</span>
+                    <span>2018</span>
+                </div>
+            </div>
+            <!-- short description -->
+            <div class="desc mt-6">
+                Four years after the events of Halloween in 2018, Laurie
+                has decided to liberate herself from fear and rage and
+                embrace life. But when a young man is accused of killing a
+                boy he was babysitting, it ignites a cascade of violence
+                and terror that will force Laurie to finally confront the
+                evil she can’t control, once and for all.
+            </div>
+        </div>
+    </div>
+</div>
