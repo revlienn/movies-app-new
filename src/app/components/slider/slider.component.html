@@ -7,7 +7,10 @@
         <div class="slide-bg">
             <img
                 class="slide-bg-image"
-                src="https://image.tmdb.org/t/p/original/iQJ1gC2p6yn5wnBEklhPaEFJ3n1.jpg"
+                [src]="
+                    'https://image.tmdb.org/t/p/original' +
+                    item.backdrop_path
+                "
                 alt=""
             />
         </div>
@@ -22,21 +25,18 @@
                         <span class="material-symbols-outlined icon">
                             star
                         </span>
-                        <span class="rating-value">7.5</span>
+                        <span class="rating-value">{{
+                            item.vote_average
+                        }}</span>
                         <span>/10</span>
                     </span>
-                    <span>463 reviews</span>
-                    <span>2018</span>
+                    <span>{{ item.vote_count }} reviews</span>
+                    <span>{{ item.release_date | date: "yyyy" }}</span>
                 </div>
             </div>
             <!-- short description -->
             <div class="desc mt-6">
-                Four years after the events of Halloween in 2018, Laurie
-                has decided to liberate herself from fear and rage and
-                embrace life. But when a young man is accused of killing a
-                boy he was babysitting, it ignites a cascade of violence
-                and terror that will force Laurie to finally confront the
-                evil she can’t control, once and for all.
+                {{ item.overview }}
             </div>
         </div>
     </div>
